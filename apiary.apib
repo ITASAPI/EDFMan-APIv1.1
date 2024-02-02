@@ -10,15 +10,15 @@ VERSION: 1.0
 ## New Endpoints
 
 <ul>
-<li>Client Ledger Data <b>Create Client Ledger Account</b>: Create Client Ledger Record with sub records,<a href="/#reference/client-ledger-data/client-ledger-account/create-client-ledger-account"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Ledger Account</b>: Update Client Ledger Record,<a href="/#reference/client-ledger-data/client-ledger-account/update-client-ledger-account"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Ledger Account</b>: Delete Client Ledger Record,<a href="/#reference/client-ledger-data/client-ledger-account/delete-client-ledger-account"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Ledger Bank Account</b>: Update Client Ledger Bank Record,<a href="/#reference/client-ledger-data/client-ledger-bank-account/update-client-ledger-bank-account"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Ledger Bank Account</b>: Delete Client Ledger Bank Record,<a href="/#reference/client-ledger-data/client-ledger-bank-account/delete-client-ledger-bank-account"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Ledger Interface Code</b>: Update Client Ledger Interface Code Record,<a href="/#reference/client-ledger-data/client-ledger-interface-code/update-client-ledger-interface-code"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Ledger Interface Code</b>: Delete Client Ledger Interface Code Record,<a href="/#reference/client-ledger-data/client-ledger-interface-code/delete-client-ledger-interface-code"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Ledger Extra VAT Registration</b>: Update Client Ledger  Extra VAT Registration Record,<a href="/#reference/client-ledger-data/client-ledger-extra-vat-registration/update-client-ledger-extra-vat-registration"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Ledger Extra VAT Registration</b>: Delete Client Ledger  Extra VAT Registration Record,<a href="/#reference/client-ledger-data/client-ledger-extra-vat-registration/delete-client-ledger-extra-vat-registration"> Link</a></li>
+<li>Client Ledger Data <b>Create Client Account</b>: Create Client Record with sub records,<a href="/#reference/client-ledger-data/client-account/create-client-ledger-account"> Link</a></li>
+<li>Client Ledger Data <b>Update Client Account</b>: Update Client Record,<a href="/#reference/client-ledger-data/client-ledger-account/update-client-account"> Link</a></li>
+<li>Client Ledger Data <b>Delete Client Account</b>: Delete Client Record,<a href="/#reference/client-ledger-data/client-ledger-account/delete-client-account"> Link</a></li>
+<li>Client Ledger Data <b>Update Client Bank Account</b>: Update Client Bank Record,<a href="/#reference/client-ledger-data/client-ledger-bank-account/update-client-bank-account"> Link</a></li>
+<li>Client Ledger Data <b>Delete Client Bank Account</b>: Delete Client Bank Record,<a href="/#reference/client-ledger-data/client-ledger-bank-account/delete-client-bank-account"> Link</a></li>
+<li>Client Ledger Data <b>Update Client Interface Code</b>: Update Client Interface Code Record,<a href="/#reference/client-ledger-data/client-ledger-interface-code/update-client-interface-code"> Link</a></li>
+<li>Client Ledger Data <b>Delete Client Interface Code</b>: Delete Client Interface Code Record,<a href="/#reference/client-ledger-data/client-ledger-interface-code/delete-client-interface-code"> Link</a></li>
+<li>Client Ledger Data <b>Update Client Extra VAT Registration</b>: Update Client Extra VAT Registration Record,<a href="/#reference/client-ledger-data/client-extra-vat-registration/update-client-ledger-extra-vat-registration"> Link</a></li>
+<li>Client Ledger Data <b>Delete Client Extra VAT Registration</b>: Delete Client Extra VAT Registration Record,<a href="/#reference/client-ledger-data/client-extra-vat-registration/delete-client-ledger-extra-vat-registration"> Link</a></li>
 </ul>
 
 ## Updated Endpoints
@@ -42,7 +42,7 @@ Model Header containing AccessToken
 
 ## Client Ledger Account [/ClientLedger/{TradingEntityId}/ClientAccount/{ClientAccountId}]
 
-### Create Client Ledger Account [PUT]
+### Create Client Account [PUT]
 `PUT`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -94,9 +94,9 @@ Model Header containing AccessToken
 |CanBeNotify|Is Client a Notify|`boolean`||||
 |CanBeStaff|Is Client a Staff|`boolean`||||
 |CanBeSampleSenderReceiver|Is Client a Staff|`boolean`||||
-|ClientLedgerBankAccounts|See <b><a href="/#reference/data-object-definitions/client-ledger-bank-account">Client Ledger Bank Account object</a></b> |[array] of `object`||||
-|ClientLedgerInterfaceCodes|See <b><a href="/#reference/data-object-definitions/client-ledger-interface-code">Client Ledger Interface Code object</a></b> |[array] of `object`||||
-|ClientLedgerExtraVATRegistrations|See <b><a href="/#reference/data-object-definitions/client-ledger-extra-vat-registration">Client Ledger Extra VAT Registration object</a></b> |[array] of `object`||||
+|ClientBankAccounts|See <b><a href="/#reference/data-object-definitions/client-ledger-bank-account">Client Ledger Bank Account object</a></b> |[array] of `object`||||
+|ClientInterfaceCodes|See <b><a href="/#reference/data-object-definitions/client-ledger-interface-code">Client Ledger Interface Code object</a></b> |[array] of `object`||||
+|ClientExtraVATRegistrations|See <b><a href="/#reference/data-object-definitions/client-ledger-extra-vat-registration">Client Ledger Extra VAT Registration object</a></b> |[array] of `object`||||
 
 
 + Request (application/json)
@@ -126,7 +126,7 @@ Model Header containing AccessToken
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Update Client Ledger Account [PATCH]
+### Update Client Account [PATCH]
 `PATCH`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -206,7 +206,7 @@ Model Header containing AccessToken
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Delete Client Ledger Account [DELETE]
+### Delete Client Account [DELETE]
 `DELETE`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -250,7 +250,7 @@ None.
 
 ## Client Ledger Bank Account [/ClientLedger/{TradingEntityId}/ClientBankAccount/{ClientAccountId}/{BankAccountName}/{BankAccountNumber}]
 
-### Update Client Ledger Bank Account [PATCH]
+### Update Client Bank Account [PATCH]
 `PATCH`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -295,7 +295,7 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Delete Client Ledger Bank Account [DELETE]
+### Delete Client Bank Account [DELETE]
 `DELETE`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -345,7 +345,7 @@ None.
 
 ## Client Ledger Interface Code [/ClientLedger/{TradingEntityId}/ClientInterfaceCode/{ClientAccountId}/{InterfaceTypeCode}]
 
-### Update Client Ledger Interface Code [PATCH]
+### Update Client Interface Code [PATCH]
 `PATCH`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -383,7 +383,7 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Delete Client Ledger Interface Code [DELETE]
+### Delete Client Interface Code [DELETE]
 `DELETE`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -430,7 +430,7 @@ None.
 
 ## Client Ledger Extra VAT Registration [/ClientLedger/{TradingEntityId}/ClientExtraVATRegistration/{ClientAccountId}/{VATRegistrationNumber}]
 
-### Update Client Ledger Extra VAT Registration [PATCH]
+### Update Client Extra VAT Registration [PATCH]
 `PATCH`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -470,7 +470,7 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Delete Client Ledger Extra VAT Registration [DELETE]
+### Delete Client Extra VAT Registration [DELETE]
 `DELETE`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -521,7 +521,7 @@ List of re-usable Data Objects referenced as `object` types. Not that these endp
 
 ## Client Ledger Bank Account [/ClientLedgerBankAccount]
 A multipurpose object used by several endpoints
-### ClientLedgerBankAccount[PUT]
+### ClientBankAccount[PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -539,7 +539,7 @@ A multipurpose object used by several endpoints
 
 ## Client Ledger Extra VAT Registration [/ClientLedgerExtraVatRegistration]
 A multipurpose object used by several endpoints
-### ClientLedgerExtraVatRegistration[PUT]
+### ClientExtraVatRegistration[PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -553,7 +553,7 @@ A multipurpose object used by several endpoints
 
 ## Client Ledger Interface Code [/ClientLedgerInterfaceCode]
 A multipurpose object used by several endpoints
-### ClientLedgerInterfaceCode[PUT]
+### ClientInterfaceCode[PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
