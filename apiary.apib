@@ -86,9 +86,9 @@ Model Header containing AccessToken
 |CanBeNotify|Is Client a Notify|`boolean`||||
 |CanBeStaff|Is Client a Staff|`boolean`||||
 |CanBeSampleSenderReceiver|Is Client a Staff|`boolean`||||
-|ClientBankAccounts|See <b><a href="/#reference/data-object-definitions/client-bank-account">Client Bank Account object</a></b> |[array] of `object`||||
-|ClientInterfaceCodes|See <b><a href="/#reference/data-object-definitions/client-interface-code">Client Interface Code object</a></b> |[array] of `object`||||
-|ClientExtraVATRegistrations|See <b><a href="/#reference/data-object-definitions/client-extra-vat-registration">Client Extra VAT Registration object</a></b> |[array] of `object`||||
+|ClientLedgerBankAccounts|See <b><a href="/#reference/data-object-definitions/client-ledger-bank-account">Client Ledger Bank Account object</a></b> |[array] of `object`||||
+|ClientLedgerInterfaceCodes|See <b><a href="/#reference/data-object-definitions/client-ledger-interface-code">Client Ledger Interface Code object</a></b> |[array] of `object`||||
+|ClientLedgerExtraVATRegistrations|See <b><a href="/#reference/data-object-definitions/client-ledger-extra-vat-registration">Client Ledger Extra VAT Registration object</a></b> |[array] of `object`||||
 
 
 + Request (application/json)
@@ -362,7 +362,7 @@ None.
     + Attributes 
         + Data
             + ClientAccountId: ABCDEF.P (string)
-            + BankAccountName: SAP (string)
+            + InterfaceTypeCode: SAP (string)
         + Response (200 UpdateResponse)
         + Messages (array [201 ErrorMessageDetail])
     
@@ -408,7 +408,7 @@ None.
     + Attributes 
         + Data
             + ClientAccountId: ABCDEF.P (string)
-            + BankAccountName: SAP (string)
+            + InterfaceTypeCode: SAP (string)
         + Response (200 DeletedResponse)
     
 + Response 400 (application/json; charset=utf-8)
@@ -420,7 +420,7 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-## Client Ledger Extra VAT Registration [/ClientLedger/{TradingEntityId}/ClientExtraVatRegistration/{ClientAccountId}/{VATRegistrationNumber}]
+## Client Ledger Extra VAT Registration [/ClientLedger/{TradingEntityId}/ClientExtraVATRegistration/{ClientAccountId}/{VATRegistrationNumber}]
 
 ### Update Client Ledger Extra VAT Registration [PATCH]
 `PATCH`
@@ -438,7 +438,7 @@ None.
 
             AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes (ClientInterfaceCodeUpdateObject)
+    + Attributes (ClientExtraVatUpdateObject)
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
@@ -511,9 +511,9 @@ None.
 # Group Data Object Definitions
 List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
 
-## Client Bank Account [/ClientBankAccount]
+## Client Ledger Bank Account [/ClientLedgerBankAccount]
 A multipurpose object used by several endpoints
-### ClientBankAccount[PUT]
+### ClientLedgerBankAccount[PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -529,9 +529,9 @@ A multipurpose object used by several endpoints
 + Attributes (ClientBankAccountObject)
 
 
-## Client Extra VAT Registration [/ClientExtraVatRegistration]
+## Client Ledger Extra VAT Registration [/ClientLedgerExtraVatRegistration]
 A multipurpose object used by several endpoints
-### ClientExtraVatRegistration[PUT]
+### ClientLedgerExtraVatRegistration[PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -543,9 +543,9 @@ A multipurpose object used by several endpoints
 + Response 200 (application/json; charset=utf-8)
 + Attributes (ClientExtraVatObject)
 
-## Client Interface Code [/ClientInterfaceCode]
+## Client Ledger Interface Code [/ClientLedgerInterfaceCode]
 A multipurpose object used by several endpoints
-### ClientInterfaceCode[PUT]
+### ClientLedgerInterfaceCode[PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
