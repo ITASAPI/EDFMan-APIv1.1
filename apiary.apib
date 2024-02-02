@@ -35,7 +35,7 @@ Model Header containing AccessToken
 ## Client Ledger Account [/ClientLedger/{TradingEntityId}/ClientAccount/{ClientAccountId}]
 
 ### Create Client Ledger Account [PUT]
-`PUT` `ClientAccountId` must be unique.
+`PUT`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -314,9 +314,9 @@ A multipurpose object used by several endpoints
 + CanBeNotify: true (boolean)
 + CanBeStaff: true (boolean)
 + CanBeSampleSenderReceiver: true (boolean)
-+ ClientBankAccounts (ClientBankAccountObject)
-+ ClientInterfaceCodes (ClientInterfaceCodeObject)
-+ ClientExtraVATRegistrations (ClientExtraVatObject)
++ ClientBankAccounts (array [ClientBankAccountObject])
++ ClientInterfaceCodes (array [ClientInterfaceCodeObject])
++ ClientExtraVATRegistrations (array [ClientExtraVatObject])
 
 ## ClientBankAccountObject (object)
 + BankAccountName: Barclays (string)
