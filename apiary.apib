@@ -35,7 +35,7 @@ Model Header containing AccessToken
 ## Client Ledger Account [/ClientLedger/{TradingEntityId}/ClientAccount/{ClientAccountId}]
 
 ### Create Client Ledger Account [PUT]
-`PUT` For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI.
+`PUT` `ClientAccountId` must be unique.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -100,7 +100,7 @@ Model Header containing AccessToken
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create or update.
+    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create.
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
@@ -267,8 +267,56 @@ A multipurpose object used by several endpoints
 + Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg 
 
 ## ClientAccountCreate (object)
-+ InterfaceTypeCode: SAP (string)
-+ CodeMapping: SP123456 (string)
++ ClientAccountId: ABCDE.P (string)
++ Title: ABCDE Client (string)
++ CountryCode: GB (string)
++ ShortName: ABCDE Client Ledger (string)
++ ClientTypeCode: H (string)
++ Status: H (string)
++ AddressLine1: Address Line #1 (string)
++ AddressLine2: Address Line #2 (string) 
++ AddressLine3: Address Line #3 (string) 
++ AddressLine4: Address Line #4 (string) 
++ ZipCode: 01234567 (string)
++ City: Capital (string)
++ Province: Prov (string)
++ EmailAddress: abc@def.com (string)
++ PhoneNumber: +44 1702 22334455 (string)
++ FaxNumber: +44 1702 33445566 (string)
++ CountryOfIncCode: US (string)
++ HeadOfFamilyAccountCode: HEAD.P (string)
++ CanBeBuyer: true (boolean)
++ CanBeSeller: true (boolean)
++ CanBeShipper: true (boolean)
++ CanBeWarehouse: true (boolean)
++ CanBeAgent: true (boolean)
++ CanBeDeliveryAccount: true (boolean)
++ CanBe3rdParty: true (boolean)
++ CanBeDerivativeClient: true (boolean)
++ CanBeDerivativeBroker: true (boolean)
++ CanBeIntroBroker: true (boolean)
++ CanBeBank: true (boolean)
++ CanBeDistributer: true (boolean)
++ CanBeService: true (boolean)
++ CanBeProjectSponsor: true (boolean)
++ CanBeProjectManager: true (boolean)
++ CanBeContractor: true (boolean)
++ CanBeGiveUp: true (boolean)
++ CanBeAssociation: true (boolean)
++ CanBeHaulier: true (boolean)
++ CanBeMill: true (boolean)
++ CanBeForwarder: true (boolean)
++ CanBeController: true (boolean)
++ CanBeGrower: true (boolean)
++ CanBeFloorBroker: true (boolean)
++ CanBePrivatePerson: true (boolean)
++ CanBeStockManager: true (boolean)
++ CanBeNotify: true (boolean)
++ CanBeStaff: true (boolean)
++ CanBeSampleSenderReceiver: true (boolean)
++ ClientBankAccounts (ClientBankAccountObject)
++ ClientInterfaceCodes (ClientInterfaceCodeObject)
++ ClientExtraVATRegistrations (ClientExtraVatObject)
 
 ## ClientBankAccountObject (object)
 + BankAccountName: Barclays (string)
