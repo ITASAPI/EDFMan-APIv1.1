@@ -2,23 +2,15 @@ FORMAT: 1A
 HOST: http://itas.apiary.io/
 VERSION: 1.0
 
-# COFCO Custom API v1.0
+# ED&FMan Custom API v1.0
 
 <br />
-<strong>Release notes</strong> (<sup>2nd</sup> February 2024.)
+<strong>Release notes</strong> (<sup>2nd</sup> XXX 2024.)
 
 ## New Endpoints
 
 <ul>
 <li>Client Ledger Data <b>Create Client Account</b>: Create Client Record with sub records,<a href="/#reference/client-ledger-data/client-account/create-client-ledger-account"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Account</b>: Update Client Record,<a href="/#reference/client-ledger-data/client-ledger-account/update-client-account"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Account</b>: Delete Client Record,<a href="/#reference/client-ledger-data/client-ledger-account/delete-client-account"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Bank Account</b>: Update Client Bank Record,<a href="/#reference/client-ledger-data/client-ledger-bank-account/update-client-bank-account"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Bank Account</b>: Delete Client Bank Record,<a href="/#reference/client-ledger-data/client-ledger-bank-account/delete-client-bank-account"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Interface Code</b>: Update Client Interface Code Record,<a href="/#reference/client-ledger-data/client-ledger-interface-code/update-client-interface-code"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Interface Code</b>: Delete Client Interface Code Record,<a href="/#reference/client-ledger-data/client-ledger-interface-code/delete-client-interface-code"> Link</a></li>
-<li>Client Ledger Data <b>Update Client Extra VAT Registration</b>: Update Client Extra VAT Registration Record,<a href="/#reference/client-ledger-data/client-extra-vat-registration/update-client-ledger-extra-vat-registration"> Link</a></li>
-<li>Client Ledger Data <b>Delete Client Extra VAT Registration</b>: Delete Client Extra VAT Registration Record,<a href="/#reference/client-ledger-data/client-extra-vat-registration/delete-client-ledger-extra-vat-registration"> Link</a></li>
 </ul>
 
 ## Updated Endpoints
@@ -26,7 +18,7 @@ VERSION: 1.0
 <ul>
 <li>None</li>
 </ul>
-<chandiv>** ends ** </div>
+<div>** ends ** </div>
 
 
 ## AccessToken [/AT]
@@ -38,65 +30,54 @@ Model Header containing AccessToken
             Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
 
-# Group Client Ledger Data
+# Electronic Order Book
 
-## Client Ledger Account [/ClientLedger/{TradingEntityId}/ClientAccount/{ClientAccountId}]
+## Broker Data Create [/ElectronicOrderBook/BrokerData]
 
-### Create Client Account [PUT]
-`PUT`
+### Create Broker Data [POST]
+`POST`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required. Unique Key|
-|Title|Client Account Title|`string`|200||Required|
-|CountryCode|Country Code|`string`|3||Required|
-|ShortName|Short Name|`string`|100|||
-|ClientTypeCode|Client Account Type Code|`string`|1|||
-|Status|Account Status|`string`|1||`O` or `F`, default `O`|
-|AddressLine1|Address Line 1|`string`|60|||
-|AddressLine2|Address Line 2|`string`|60|||
-|AddressLine3|Address Line 3|`string`|60|||
-|AddressLine4|Address Line 4|`string`|60|||
-|ZipCode|Zip Code|`string`|40|||
-|City|City|`string`|20|||
-|Province|Province|`string`|4|||
-|EmailAddress|Email Address|`string`|100|||
-|PhoneNumber|Phone Number|`string`|40|||
-|FaxNumber|Fax Number|`string`|40|||
-|CountryOfIncCode|Country of Incorporation Code|`string`|3|||
-|HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
-|CanBeBuyer|Is Client a Buyer|`boolean`||||
-|CanBeSeller|Is Client a Seller|`boolean`||||
-|CanBeShipper|Is Client a Shipper|`boolean`||||
-|CanBeWarehouse|Is Client a Warehouse|`boolean`||||
-|CanBeAgent|Is Client an Agent|`boolean`||||
-|CanBeDeliveryAccount|Is Client a Delivery Account|`boolean`||||
-|CanBe3rdParty|Is Client a 3rd Party|`boolean`||||
-|CanBeDerivativeClient|Is Client a Derivative Client|`boolean`||||
-|CanBeDerivativeBroker|Is Client a Derivative Broker|`boolean`||||
-|CanBeIntroBroker|Is Client an Intro Broker|`boolean`||||
-|CanBeBank|Is Client a Bank|`boolean`||||
-|CanBeDistributer|Is Client a Distributer|`boolean`||||
-|CanBeService|Is Client a Service|`boolean`||||
-|CanBeProjectSponsor|Is Client a Project Sponsor|`boolean`||||
-|CanBeProjectManager|Is Client a Project Manager|`boolean`||||
-|CanBeContractor|Is Client a Contractor|`boolean`||||
-|CanBeGiveUp|Is Client a GiveUp|`boolean`||||
-|CanBeAssociation|Is Client an Association|`boolean`||||
-|CanBeHaulier|Is Client a Haulier|`boolean`||||
-|CanBeMill|Is Client a Mill|`boolean`||||
-|CanBeForwarder|Is Client a Forwarder|`boolean`||||
-|CanBeController|Is Client a Controller|`boolean`||||
-|CanBeGrower|Is Client a Grower|`boolean`||||
-|CanBeFloorBroker|Is Client a Floor Broker|`boolean`||||
-|CanBePrivatePerson|Is Client a Private Person|`boolean`||||
-|CanBeStockManager|Is Client a Stock Manager|`boolean`||||
-|CanBeNotify|Is Client a Notify|`boolean`||||
-|CanBeStaff|Is Client a Staff|`boolean`||||
-|CanBeSampleSenderReceiver|Is Client a Staff|`boolean`||||
-|ClientBankAccounts|See <b><a href="/#reference/data-object-definitions/client-ledger-bank-account">Client Ledger Bank Account object</a></b> |[array] of `object`||||
-|ClientInterfaceCodes|See <b><a href="/#reference/data-object-definitions/client-ledger-interface-code">Client Ledger Interface Code object</a></b> |[array] of `object`||||
-|ClientExtraVATRegistrations|See <b><a href="/#reference/data-object-definitions/client-ledger-extra-vat-registration">Client Ledger Extra VAT Registration object</a></b> |[array] of `object`||||
+|SerialNo|Serail Number|`number`||||
+|TradeDate|Trade Date|`datetime`||||
+|AccountCode|Account Code|`string`|10|||
+|TradeCode|Trade Code|`string`|3|||
+|DepartmentCode|Department Code|`string`|4|||
+|InstrumentCode|Instrument Code|`string`|8|||
+|PromptDate|Prompt Date|`date`||`yyyy-mm` or `yyyy-mm-dd`||
+|Instruction|Instruction|`boolean`||||
+|OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
+|OptionSeries|Option Series|`decimal`||||
+|BuySell|Buy or Sell|`string`|1||`B` or `S`|
+|Lots|Lots|`number`|||. Greater than `0`|
+|PhysiscalTrade|Physical Reference|`string`|11|||
+|BrokerCode|Broker Account|`string`|10|||
+|Price|Price|`decimal`||||
+|FloorBrokerCode|Floor Broker Account Code|`string`|10|||
+|TraderCode|Trader Code|`string`|3|||
+|Memo|Memorandum|`string`|120|||
+|StrategyCode|Strategy Code|`string`|15|||
+|StrategyGroup|Strategy Group|`string`|15|||
+|Memo2|Memorandum 2|`string`|20|||
+|ExternalSerial|External Serial|`string`|10|||
+|CommissionCodeRateCode|Commission Code Rate Code|`string`|3|||
+|BrokerPrice|Broker Price|`number`||||
+|BuybackReference|Buyback Reference|`number`||||
+|ClientOrBroker|Client or Broker|`string`||`C` or `B`||
+|CommissionCurrencyCode|Commission Currency Code|`string`|3|||
+|CommissionType|Commission Type|`string`|1| `%` or `blank` for Rate per lot||
+|CommissionRate|Commission Rate|`number`||||
+|CounterpartyCode|Counterparty Code|`string`|10|||
+|DeclaredPrice|Declared Price|`number`||||
+|Exchange Code|Exchange Code|`string`|6|||
+|InventoryHedgeType|Inventory Hedge Type|`string`|1|||
+|IsPysicalFix|Is Physical Fix|`boolean`||||
+|OTCBrokerCode|OTC Broker Code|`string`|10|||
+|OTCBrokerCommissionCurrencyCode|OTC Broker Commission Currency|`string`|3|||
+|OTCCommission|OTC Commission|`number`||||
+|SecondBrokerCommissionCurrencyCode|Second Broker Commission Currency|`string`|3|||
+|TradeTime|Trade Time|`string`|5|||
 
 
 + Request (application/json)
@@ -104,16 +85,12 @@ Model Header containing AccessToken
 
             AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes (ClientAccountCreate)
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create.
+    + Attributes (BrokerDataCreate)
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + ClientAccountId: ABCDEF.P (string)
+            + BrokerDataId: 1 (string)
         + Response (201 CreateResponse)
         + Messages (array [201 ErrorMessageDetail])
     
@@ -126,74 +103,68 @@ Model Header containing AccessToken
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Update Client Account [PATCH]
+## Broker Data Update/Delete [/ElectronicOrderBook/BrokerData/{BrokerDataId}]
+
+### Update Broker Data [PATCH]
 `PATCH`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|Title|Client Account Title|`string`|200|||
-|CountryCode|Country Code|`string`|3|||
-|ShortName|Short Name|`string`|100|||
-|ClientTypeCode|Client Account Type Code|`string`|1|||
-|Status|Account Status|`string`|1||`O` or `F`|
-|AddressLine1|Address Line 1|`string`|60|||
-|AddressLine2|Address Line 2|`string`|60|||
-|AddressLine3|Address Line 3|`string`|60|||
-|AddressLine4|Address Line 4|`string`|60|||
-|ZipCode|Zip Code|`string`|40|||
-|City|City|`string`|20|||
-|Province|Province|`string`|4|||
-|EmailAddress|Email Address|`string`|100|||
-|PhoneNumber|Phone Number|`string`|40|||
-|FaxNumber|Fax Number|`string`|40|||
-|CountryOfIncCode|Country of Incorporation Code|`string`|3|||
-|HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
-|CanBeBuyer|Is Client a Buyer|`boolean`||||
-|CanBeSeller|Is Client a Seller|`boolean`||||
-|CanBeShipper|Is Client a Shipper|`boolean`||||
-|CanBeWarehouse|Is Client a Warehouse|`boolean`||||
-|CanBeAgent|Is Client an Agent|`boolean`||||
-|CanBeDeliveryAccount|Is Client a Delivery Account|`boolean`||||
-|CanBe3rdParty|Is Client a 3rd Party|`boolean`||||
-|CanBeDerivativeClient|Is Client a Derivative Client|`boolean`||||
-|CanBeDerivativeBroker|Is Client a Derivative Broker|`boolean`||||
-|CanBeIntroBroker|Is Client an Intro Broker|`boolean`||||
-|CanBeBank|Is Client a Bank|`boolean`||||
-|CanBeDistributer|Is Client a Distributer|`boolean`||||
-|CanBeService|Is Client a Service|`boolean`||||
-|CanBeProjectSponsor|Is Client a Project Sponsor|`boolean`||||
-|CanBeProjectManager|Is Client a Project Manager|`boolean`||||
-|CanBeContractor|Is Client a Contractor|`boolean`||||
-|CanBeGiveUp|Is Client a GiveUp|`boolean`||||
-|CanBeAssociation|Is Client an Association|`boolean`||||
-|CanBeHaulier|Is Client a Haulier|`boolean`||||
-|CanBeMill|Is Client a Mill|`boolean`||||
-|CanBeForwarder|Is Client a Forwarder|`boolean`||||
-|CanBeController|Is Client a Controller|`boolean`||||
-|CanBeGrower|Is Client a Grower|`boolean`||||
-|CanBeFloorBroker|Is Client a Floor Broker|`boolean`||||
-|CanBePrivatePerson|Is Client a Private Person|`boolean`||||
-|CanBeStockManager|Is Client a Stock Manager|`boolean`||||
-|CanBeNotify|Is Client a Notify|`boolean`||||
-|CanBeStaff|Is Client a Staff|`boolean`||||
-|CanBeSampleSenderReceiver|Is Client a Staff|`boolean`||||
+|BrokerDataId|Broker Data Id|`number`|||Required|
+|SerialNo|Serail Number|`number`||||
+|TradeDate|Trade Date|`datetime`||||
+|AccountCode|Account Code|`string`|10|||
+|TradeCode|Trade Code|`string`|3|||
+|DepartmentCode|Department Code|`string`|4|||
+|InstrumentCode|Instrument Code|`string`|8|||
+|PromptDate|Prompt Date|`date`||`yyyy-mm` or `yyyy-mm-dd`||
+|Instruction|Instruction|`boolean`||||
+|OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
+|OptionSeries|Option Series|`decimal`||||
+|BuySell|Buy or Sell|`string`|1||`B` or `S`|
+|Lots|Lots|`number`|||. Greater than `0`|
+|PhysiscalTrade|Physical Reference|`string`|11|||
+|BrokerCode|Broker Account|`string`|10|||
+|Price|Price|`decimal`||||
+|FloorBrokerCode|Floor Broker Account Code|`string`|10|||
+|TraderCode|Trader Code|`string`|3|||
+|Memo|Memorandum|`string`|120|||
+|StrategyCode|Strategy Code|`string`|15|||
+|StrategyGroup|Strategy Group|`string`|15|||
+|Memo2|Memorandum 2|`string`|20|||
+|ExternalSerial|External Serial|`string`|10|||
+|CommissionCodeRateCode|Commission Code Rate Code|`string`|3|||
+|BrokerPrice|Broker Price|`number`||||
+|BuybackReference|Buyback Reference|`number`||||
+|ClientOrBroker|Client or Broker|`string`||`C` or `B`||
+|CommissionCurrencyCode|Commission Currency Code|`string`|3|||
+|CommissionType|Commission Type|`string`|1| `%` or `blank` for Rate per lot||
+|CommissionRate|Commission Rate|`number`||||
+|CounterpartyCode|Counterparty Code|`string`|10|||
+|DeclaredPrice|Declared Price|`number`||||
+|Exchange Code|Exchange Code|`string`|6|||
+|InventoryHedgeType|Inventory Hedge Type|`string`|1|||
+|IsPysicalFix|Is Physical Fix|`boolean`||||
+|OTCBrokerCode|OTC Broker Code|`string`|10|||
+|OTCBrokerCommissionCurrencyCode|OTC Broker Commission Currency|`string`|3|||
+|OTCCommission|OTC Commission|`number`||||
+|SecondBrokerCommissionCurrencyCode|Second Broker Commission Currency|`string`|3|||
+|TradeTime|Trade Time|`string`|5|||
 
 + Request (application/json)
     + Header
 
             AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes (ClientAccountUpdate)
+    + Attributes (BrokerDataUpdate)
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create.
+    + BrokerDataId (required, number, `1`) ... Identify specific Broker Data Record.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + ClientAccountId: ABCDEF.P (string)
+            + BrokerDataId: 1 (number)
         + Response (200 UpdateResponse)
         + Messages (array [201 ErrorMessageDetail])
     
@@ -206,12 +177,12 @@ Model Header containing AccessToken
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-### Delete Client Account [DELETE]
+### Delete Broker Data [DELETE]
 `DELETE`
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
+|BrokerDataId|Broker Data ID|`number`|||Required|
 
 <strong>Body Parameters</strong>
 <br />
@@ -230,13 +201,12 @@ None.
             }
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to delete.
+    + BrokerDataId (required, number, `1`) ... Identify specific Broker Data Record.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + ClientAccountId: ABCDEF.P (string)
+            + BrokerDataId: 1 (number)
         + Response (200 DeletedResponse)
     
 + Response 400 (application/json; charset=utf-8)
@@ -247,321 +217,6 @@ None.
 
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
-
-## Client Ledger Bank Account [/ClientLedger/{TradingEntityId}/ClientBankAccount/{ClientAccountId}/{BankAccountName}/{BankAccountNumber}]
-
-### Update Client Bank Account [PATCH]
-`PATCH`
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|BankAccountName|Bank Account Name|`string`|40||Required|
-|BankAccountNumber|Bank Account Number|`string`|34||Required|
-|CountryCode|Country Code|`string`|3|||
-|BankNumber|Bank Number|`number`||||
-|IBANNumber|IBAN Number|`string`|34|||
-|CurrencyCode|Currency Code|`string`|3|||
-|Status|Account Status|`string`|1||`O` or `F`|
-
-+ Request (application/json)
-    + Header
-
-            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (ClientBankAccountUpdateObject)
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... 
-    + BankAccountName (required, string, `Barclays`) ... 
-    + BankAccountNumber (required, string, `111000111`) ... 
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountId: ABCDEF.P (string)
-            + BankAccountName: Barclays (string)
-            + BankAccountNumber: 111000111 (string)
-        + Response (200 UpdateResponse)
-        + Messages (array [201 ErrorMessageDetail])
-    
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
-
-### Delete Client Bank Account [DELETE]
-`DELETE`
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|BankAccountName|Bank Account Name|`string`|40||Required|
-|BankAccountNumber|Bank Account Number|`string`|34||Required|
-
-<strong>Body Parameters</strong>
-<br />
-None.
-
-
-+ Request (application/json)
-    + Header
-
-            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Body 
-    
-            {
-                none
-            }
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... 
-    + BankAccountName (required, string, `Barclays`) ... 
-    + BankAccountNumber (required, string, `111000111`) ... 
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountId: ABCDEF.P (string)
-            + BankAccountName: Barclays (string)
-            + BankAccountNumber: 111000111 (string)
-        + Response (200 DeletedResponse)
-    
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
-
-## Client Ledger Interface Code [/ClientLedger/{TradingEntityId}/ClientInterfaceCode/{ClientAccountId}/{InterfaceTypeCode}]
-
-### Update Client Interface Code [PATCH]
-`PATCH`
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|InterfaceTypeCode|Interface Type Code|`string`|8||Required|
-|CodeMapping|Code Mapping|`string`|20||Required|
-
-+ Request (application/json)
-    + Header
-
-            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (ClientInterfaceCodeUpdateObject)
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... 
-    + InterfaceTypeCode (required, string, `SAP`) ... 
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountId: ABCDEF.P (string)
-            + InterfaceTypeCode: SAP (string)
-        + Response (200 UpdateResponse)
-        + Messages (array [201 ErrorMessageDetail])
-    
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
-
-### Delete Client Interface Code [DELETE]
-`DELETE`
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|InterfaceTypeCode|Interface Type Code|`string`|8||Required|
-
-<strong>Body Parameters</strong>
-<br />
-None.
-
-
-+ Request (application/json)
-    + Header
-
-            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Body 
-    
-            {
-                none
-            }
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... 
-    + InterfaceTypeCode (required, string, `SAP`) ... 
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountId: ABCDEF.P (string)
-            + InterfaceTypeCode: SAP (string)
-        + Response (200 DeletedResponse)
-    
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
-
-## Client Ledger Extra VAT Registration [/ClientLedger/{TradingEntityId}/ClientExtraVATRegistration/{ClientAccountId}/{VATRegistrationNumber}]
-
-### Update Client Extra VAT Registration [PATCH]
-`PATCH`
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|VATRegistrationNumber|VAT Registration Number|`string`|20||Required|
-|CountryCode|Country Code|`string`|3|||
-|IDNumber|ID Number|`string`|255|||
-|EORINumber|EORI Number|`string`|20|||
-
-+ Request (application/json)
-    + Header
-
-            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (ClientExtraVatUpdateObject)
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... 
-    + VATRegistrationNumber (required, string, `GBP2`) ... 
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountId: ABCDEF.P (string)
-            + VATRegistrationNumber: GBP2 (string)
-        + Response (200 UpdateResponse)
-        + Messages (array [201 ErrorMessageDetail])
-    
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
-
-### Delete Client Extra VAT Registration [DELETE]
-`DELETE`
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account ID|`string`|10||Required|
-|VATRegistrationNumber|VAT Registration Number|`string`|20||Required|
-
-<strong>Body Parameters</strong>
-<br />
-None.
-
-
-+ Request (application/json)
-    + Header
-
-            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Body 
-    
-            {
-                none
-            }
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... 
-    + VATRegistrationNumber (required, string, `GBP2`) ... 
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountId: ABCDEF.P (string)
-            + VATRegistrationNumber: GBP2 (string)
-        + Response (200 DeletedResponse)
-    
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
-
-
-# Group Data Object Definitions
-List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
-
-## Client Ledger Bank Account [/ClientLedgerBankAccount]
-A multipurpose object used by several endpoints
-### ClientBankAccount[PUT]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|BankAccountName|Bank Account Name|`string`|40||Required|
-|BankAccountNumber|Bank Account Number|`string`|34||Required|
-|CountryCode|Country Code|`string`|3|||
-|BankNumber|Bank Number|`number`||||
-|IBANNumber|IBAN Number|`string`|34|||
-|CurrencyCode|Currency Code|`string`|3|||
-|Status|Account Status|`string`|1||`O` or `F`, default `O`|
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (ClientBankAccountObject)
-
-
-## Client Ledger Extra VAT Registration [/ClientLedgerExtraVatRegistration]
-A multipurpose object used by several endpoints
-### ClientExtraVatRegistration[PUT]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|VATRegistrationNumber|VAT Registration Number|`string`|20||Required|
-|CountryCode|Country Code|`string`|3|||
-|IDNumber|ID Number|`string`|255|||
-|EORINumber|EORI Number|`string`|20|||
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (ClientExtraVatObject)
-
-## Client Ledger Interface Code [/ClientLedgerInterfaceCode]
-A multipurpose object used by several endpoints
-### ClientInterfaceCode[PUT]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|InterfaceTypeCode|Interface Type Code|`string`|8||Required|
-|CodeMapping|Code Mapping|`string`|20||Required|
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (ClientInterfaceCodeObject)
 
 
 # Data Structures
@@ -656,144 +311,87 @@ A multipurpose object used by several endpoints
 ## accessToken (object)
 + Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg 
 
-## ClientAccountCreate (object)
-+ ClientAccountId: ABCDE.P (string)
-+ Title: ABCDE Client (string)
-+ CountryCode: GB (string)
-+ ShortName: ABCDE Client Ledger (string)
-+ ClientTypeCode: H (string)
-+ Status: H (string)
-+ AddressLine1: Address Line #1 (string)
-+ AddressLine2: Address Line #2 (string) 
-+ AddressLine3: Address Line #3 (string) 
-+ AddressLine4: Address Line #4 (string) 
-+ ZipCode: 01234567 (string)
-+ City: Capital (string)
-+ Province: Prov (string)
-+ EmailAddress: abc@def.com (string)
-+ PhoneNumber: +44 1702 22334455 (string)
-+ FaxNumber: +44 1702 33445566 (string)
-+ CountryOfIncCode: US (string)
-+ HeadOfFamilyAccountCode: HEAD.P (string)
-+ CanBeBuyer: true (boolean)
-+ CanBeSeller: true (boolean)
-+ CanBeShipper: true (boolean)
-+ CanBeWarehouse: true (boolean)
-+ CanBeAgent: true (boolean)
-+ CanBeDeliveryAccount: true (boolean)
-+ CanBe3rdParty: true (boolean)
-+ CanBeDerivativeClient: false (boolean)
-+ CanBeDerivativeBroker: false (boolean)
-+ CanBeIntroBroker: true (boolean)
-+ CanBeBank: true (boolean)
-+ CanBeDistributer: true (boolean)
-+ CanBeService: true (boolean)
-+ CanBeProjectSponsor: false (boolean)
-+ CanBeProjectManager: false (boolean)
-+ CanBeContractor: true (boolean)
-+ CanBeGiveUp: true (boolean)
-+ CanBeAssociation: true (boolean)
-+ CanBeHaulier: true (boolean)
-+ CanBeMill: true (boolean)
-+ CanBeForwarder: true (boolean)
-+ CanBeController: true (boolean)
-+ CanBeGrower: true (boolean)
-+ CanBeFloorBroker: true (boolean)
-+ CanBePrivatePerson: false (boolean)
-+ CanBeStockManager: false (boolean)
-+ CanBeNotify: true (boolean)
-+ CanBeStaff: false (boolean)
-+ CanBeSampleSenderReceiver: false (boolean)
-+ ClientLedgerBankAccounts (array [ClientBankAccountObject])
-+ ClientLedgerInterfaceCodes (array [ClientInterfaceCodeObject])
-+ ClientLedgerExtraVATRegistrations (array [ClientExtraVatObject])
+## BrokerDataCreate (object)
++ SerialNo: 123 (number)
++ TradeDate: `2015-07-01T00:00:00Z` (string)
++ AccountCode: ABCDEF.P (string)
++ Code: AA (string)
++ DepartmentCode: 5100 (string)
++ InstrumentCode: NY11 (string)
++ PromptDate: `2015-07-01` (string)
++ PromptMonth: `2015-07-01T00:00:00Z` (string)
++ Instruction: true (boolean)
++ OptionType: C (string)
++ OptionSeries: 123 (number)
++ BuySell: B (string)
++ Lots: 100 (number)
++ PhysRef: ABCDEF.STK (string)
++ BrokerCode: ABCDEF.P (string)
++ Price: 12345 (number)
++ FloorBrokerCode: ABCDEF.P (string)
++ TraderCode: TT (string)
++ Memo: AB CD EF (string)
++ StrategyCode: P1 (string)
++ StrategyGroup: PORT (string)
++ Memo2: GHI JKL (string)
++ ExternalSerial: ABCD (string)
++ CommissionCodeRateCode: 2 (number)
++ BrokerPrice: 20.2 (number)
++ BuybackReference: 1002 (number)
++ ClientOrBroker: C (string)
++ CommissionCurrencyCode: GBP (string)
++ CommissionType: % (string)
++ CommissionRate: 12.5 (number)
++ CounterpartyCode: COUNT.P: (string)
++ DeclaredPrice: 53.1 (number)
++ Exchange Code: NYFE (string)
++ InventoryHedgeType: 2 (string)
++ IsPysicalFix: true (string)
++ OTCBrokerCode: OTCB.T (string)
++ OTCBrokerCommissionCurrencyCode: USD (string)
++ OTCCommission: 2.4 (number)
++ SecondBrokerCommissionCurrencyCode: GBP (string)
++ TradeTime: 15.25 (string)
 
-## ClientAccountUpdate (object)
-+ ClientAccountId: ABCDE.P (string)
-+ Title: ABCDE Client (string)
-+ CountryCode: GB (string)
-+ ShortName: ABCDE Client Ledger (string)
-+ ClientTypeCode: H (string)
-+ Status: H (string)
-+ AddressLine1: Address Line #1 (string)
-+ AddressLine2: Address Line #2 (string) 
-+ AddressLine3: Address Line #3 (string) 
-+ AddressLine4: Address Line #4 (string) 
-+ ZipCode: 01234567 (string)
-+ City: Capital (string)
-+ Province: Prov (string)
-+ EmailAddress: abc@def.com (string)
-+ PhoneNumber: +44 1702 22334455 (string)
-+ FaxNumber: +44 1702 33445566 (string)
-+ CountryOfIncCode: US (string)
-+ HeadOfFamilyAccountCode: HEAD.P (string)
-+ CanBeBuyer: true (boolean)
-+ CanBeSeller: true (boolean)
-+ CanBeShipper: true (boolean)
-+ CanBeWarehouse: true (boolean)
-+ CanBeAgent: true (boolean)
-+ CanBeDeliveryAccount: true (boolean)
-+ CanBe3rdParty: true (boolean)
-+ CanBeDerivativeClient: false (boolean)
-+ CanBeDerivativeBroker: false (boolean)
-+ CanBeIntroBroker: true (boolean)
-+ CanBeBank: true (boolean)
-+ CanBeDistributer: true (boolean)
-+ CanBeService: true (boolean)
-+ CanBeProjectSponsor: false (boolean)
-+ CanBeProjectManager: false (boolean)
-+ CanBeContractor: true (boolean)
-+ CanBeGiveUp: true (boolean)
-+ CanBeAssociation: true (boolean)
-+ CanBeHaulier: true (boolean)
-+ CanBeMill: true (boolean)
-+ CanBeForwarder: true (boolean)
-+ CanBeController: true (boolean)
-+ CanBeGrower: true (boolean)
-+ CanBeFloorBroker: true (boolean)
-+ CanBePrivatePerson: false (boolean)
-+ CanBeStockManager: false (boolean)
-+ CanBeNotify: true (boolean)
-+ CanBeStaff: false (boolean)
-+ CanBeSampleSenderReceiver: false (boolean)
-
-## ClientBankAccountObject (object)
-+ BankAccountName: Barclays (string)
-+ BankAccountNumber: 111000111 (string)
-+ CountryCode: GB (string)
-+ BankNumber: 12345 (number)
-+ IBANNumber: IB987654321 (string)
-+ CurrencyCode: GBP (string)
-+ Status: O (string)
-
-## ClientBankAccountUpdateObject (object)
-+ ClientAccountId: ABCDE.P (string)
-+ BankAccountName: Barclays (string)
-+ BankAccountNumber: 111000111 (string)
-+ CountryCode: GB (string)
-+ BankNumber: 12345 (number)
-+ IBANNumber: IB987654321 (string)
-+ CurrencyCode: GBP (string)
-+ Status: O (string)
-
-## ClientExtraVatObject (object)
-+ VATRegistrationNumber: GBP2 (string)
-+ CountryCode: GB (string)
-+ IDNumber: 456456 (string)
-+ EORINumber: E12345 (string)
-
-## ClientExtraVatUpdateObject (object)
-+ ClientAccountId: ABCDE.P (string)
-+ VATRegistrationNumber: GBP2 (string)
-+ CountryCode: GB (string)
-+ IDNumber: 456456 (string)
-+ EORINumber: E12345 (string)
-
-## ClientInterfaceCodeObject (object)
-+ InterfaceTypeCode: SAP (string)
-+ CodeMapping: SP123456 (string)
-
-## ClientInterfaceCodeUpdateObject (object)
-+ ClientAccountId: ABCDE.P (string)
-+ InterfaceTypeCode: SAP (string)
-+ CodeMapping: SP123456 (string)
+## BrokerDataCreateUpdate (object)
++ BrokerDataId: 1 (number)
++ SerialNo: 123 (number)
++ TradeDate: `2015-07-01T00:00:00Z` (string)
++ AccountCode: ABCDEF.P (string)
++ Code: AA (string)
++ DepartmentCode: 5100 (string)
++ InstrumentCode: NY11 (string)
++ PromptDate: `2015-07-01` (string)
++ PromptMonth: `2015-07-01T00:00:00Z` (string)
++ Instruction: true (boolean)
++ OptionType: C (string)
++ OptionSeries: 123 (number)
++ BuySell: B (string)
++ Lots: 100 (number)
++ PhysRef: ABCDEF.STK (string)
++ BrokerCode: ABCDEF.P (string)
++ Price: 12345 (number)
++ FloorBrokerCode: ABCDEF.P (string)
++ TraderCode: TT (string)
++ Memo: AB CD EF (string)
++ StrategyCode: P1 (string)
++ StrategyGroup: PORT (string)
++ Memo2: GHI JKL (string)
++ ExternalSerial: ABCD (string)
++ CommissionCodeRateCode: 2 (number)
++ BrokerPrice: 20.2 (number)
++ BuybackReference: 1002 (number)
++ ClientOrBroker: C (string)
++ CommissionCurrencyCode: GBP (string)
++ CommissionType: % (string)
++ CommissionRate: 12.5 (number)
++ CounterpartyCode: COUNT.P: (string)
++ DeclaredPrice: 53.1 (number)
++ Exchange Code: NYFE (string)
++ InventoryHedgeType: 2 (string)
++ IsPysicalFix: true (string)
++ OTCBrokerCode: OTCB.T (string)
++ OTCBrokerCommissionCurrencyCode: USD (string)
++ OTCCommission: 2.4 (number)
++ SecondBrokerCommissionCurrencyCode: GBP (string)
++ TradeTime: 15.25 (string)
