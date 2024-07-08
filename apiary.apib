@@ -55,7 +55,7 @@ Model Header containing AccessToken
 |Instruction|Instruction|`boolean`||||
 |OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
 |OptionSeries|Option Series|`decimal`||||
-|BuySell|Buy or Sell|`string`|1|`B` or `S`||
+|BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
 |PhysiscalTrade|Physical Reference|`string`|11|||
 |BrokerCode|Broker Account|`string`|10|||
@@ -127,7 +127,7 @@ Model Header containing AccessToken
 |Instruction|Instruction|`boolean`||||
 |OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
 |OptionSeries|Option Series|`decimal`||||
-|BuySell|Buy or Sell|`string`|1|`B` or `S`||
+|BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
 |PhysiscalTrade|Physical Reference|`string`|11|||
 |BrokerCode|Broker Account|`string`|10|||
@@ -241,7 +241,7 @@ None.
 |Instruction|Instruction|`boolean`||||
 |OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
 |OptionSeries|Option Series|`decimal`||||
-|BuySell|Buy or Sell|`string`|1|`B` or `S`||
+|BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
 |PhysiscalTrade|Physical Reference|`string`|11|||
 |BrokerCode|Broker Account|`string`|10|||
@@ -313,7 +313,7 @@ None.
 |Instruction|Instruction|`boolean`||||
 |OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
 |OptionSeries|Option Series|`decimal`||||
-|BuySell|Buy or Sell|`string`|1|`B` or `S`||
+|BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
 |PhysiscalTrade|Physical Reference|`string`|11|||
 |BrokerCode|Broker Account|`string`|10|||
@@ -515,7 +515,7 @@ None.
 + Instruction: true (boolean)
 + OptionType: C (string)
 + OptionSeries: 123 (number)
-+ BuySell: B (string)
++ BuySell: Buy (string)
 + Lots: 100 (number)
 + PhysRef: ABCDEF.STK (string)
 + BrokerCode: ABCDEF.P (string)
@@ -558,7 +558,7 @@ None.
 + Instruction: true (boolean)
 + OptionType: C (string)
 + OptionSeries: 123 (number)
-+ BuySell: B (string)
++ BuySell: Buy (string)
 + Lots: 100 (number)
 + PhysRef: ABCDEF.STK (string)
 + BrokerCode: ABCDEF.P (string)
