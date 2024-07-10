@@ -53,7 +53,7 @@ Model Header containing AccessToken
 |InstrumentCode|Instrument Code|`string`|8|||
 |PromptDate|Prompt Date|`date`||`yyyy-mm` or `yyyy-mm-dd`||
 |Instruction|Instruction|`boolean`||||
-|OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
+|OptionType|Option Type|`string`|1|`Call`, `Put` or `Futures`||
 |OptionSeries|Option Series|`decimal`||||
 |BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
@@ -70,13 +70,13 @@ Model Header containing AccessToken
 |CommissionCodeRateCode|Commission Code Rate Code|`string`|3|||
 |BrokerPrice|Broker Price|`number`||||
 |BuybackReference|Buyback Reference|`number`||||
-|ClientOrBroker|Client or Broker|`string`||`C` or `B`||
+|ClientOrBroker|Client or Broker|`string`||`Client` or `Broker`||
 |CommissionCurrencyCode|Commission Currency Code|`string`|3|||
-|CommissionType|Commission Type|`string`|1| `%` or `blank` for Rate per lot||
+|CommissionType|Commission Type|`string`|1| `Percentage` or `RatePerLot`||
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
-|Exchange Code|Exchange Code|`string`|6|||
+|ExchangeCode|Exchange Code|`string`|6|||
 |InventoryHedgeType|Inventory Hedge Type|`string`|1|||
 |IsPysicalFix|Is Physical Fix|`boolean`||||
 |OTCBrokerCode|OTC Broker Code|`string`|10|||
@@ -125,7 +125,7 @@ Model Header containing AccessToken
 |InstrumentCode|Instrument Code|`string`|8|||
 |PromptDate|Prompt Date|`date`||`yyyy-mm` or `yyyy-mm-dd`||
 |Instruction|Instruction|`boolean`||||
-|OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
+|OptionType|Option Type|`string`|1|`Call`, `Put` or `Futures`||
 |OptionSeries|Option Series|`decimal`||||
 |BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
@@ -148,7 +148,7 @@ Model Header containing AccessToken
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
-|Exchange Code|Exchange Code|`string`|6|||
+|ExchangeCode|Exchange Code|`string`|6|||
 |InventoryHedgeType|Inventory Hedge Type|`string`|1|||
 |IsPysicalFix|Is Physical Fix|`boolean`||||
 |OTCBrokerCode|OTC Broker Code|`string`|10|||
@@ -262,7 +262,7 @@ None.
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
-|Exchange Code|Exchange Code|`string`|6|||
+|ExchangeCode|Exchange Code|`string`|6|||
 |InventoryHedgeType|Inventory Hedge Type|`string`|1|||
 |IsPysicalFix|Is Physical Fix|`boolean`||||
 |OTCBrokerCode|OTC Broker Code|`string`|10|||
@@ -334,7 +334,7 @@ None.
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
-|Exchange Code|Exchange Code|`string`|6|||
+|ExchangeCode|Exchange Code|`string`|6|||
 |InventoryHedgeType|Inventory Hedge Type|`string`|1|||
 |IsPysicalFix|Is Physical Fix|`boolean`||||
 |OTCBrokerCode|OTC Broker Code|`string`|10|||
@@ -535,7 +535,7 @@ None.
 + CommissionRate: 12.5 (number)
 + CounterpartyCode: COUNT.P: (string)
 + DeclaredPrice: 53.1 (number)
-+ Exchange Code: NYFE (string)
++ ExchangeCode: NYFE (string)
 + InventoryHedgeType: 2 (string)
 + IsPysicalFix: true (string)
 + OTCBrokerCode: OTCB.T (string)
@@ -577,7 +577,7 @@ None.
 + CommissionRate: 12.5 (number)
 + CounterpartyCode: COUNT.P: (string)
 + DeclaredPrice: 53.1 (number)
-+ Exchange Code: NYFE (string)
++ ExchangeCode: NYFE (string)
 + InventoryHedgeType: 2 (string)
 + IsPysicalFix: true (string)
 + OTCBrokerCode: OTCB.T (string)
