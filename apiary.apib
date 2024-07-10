@@ -142,9 +142,9 @@ Model Header containing AccessToken
 |CommissionCodeRateCode|Commission Code Rate Code|`string`|3|||
 |BrokerPrice|Broker Price|`number`||||
 |BuybackReference|Buyback Reference|`number`||||
-|ClientOrBroker|Client or Broker|`string`|`C` or `B`|||
+|ClientOrBroker|Client or Broker|`string`|`Client` or `Broker`|||
 |CommissionCurrencyCode|Commission Currency Code|`string`|3|||
-|CommissionType|Commission Type|`string`|1|`%` or `blank` for Rate per lot||
+|CommissionType|Commission Type|`string`|1|`Percentage` or `RatePerLot`||
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
@@ -239,7 +239,7 @@ None.
 |InstrumentCode|Instrument Code|`string`|8|||
 |PromptDate|Prompt Date|`date`||`yyyy-mm` or `yyyy-mm-dd`||
 |Instruction|Instruction|`boolean`||||
-|OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
+|OptionType|Option Type|`string`|1|`Call`, `Put` or `Futures`||
 |OptionSeries|Option Series|`decimal`||||
 |BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
@@ -256,9 +256,9 @@ None.
 |CommissionCodeRateCode|Commission Code Rate Code|`string`|3|||
 |BrokerPrice|Broker Price|`number`||||
 |BuybackReference|Buyback Reference|`number`||||
-|ClientOrBroker|Client or Broker|`string`||`C` or `B`||
+|ClientOrBroker|Client or Broker|`string`||`Client` or `Broker`||
 |CommissionCurrencyCode|Commission Currency Code|`string`|3|||
-|CommissionType|Commission Type|`string`|1| `%` or `blank` for Rate per lot||
+|CommissionType|Commission Type|`string`|1| `Percentage` or `RatePerLot`||
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
@@ -311,7 +311,7 @@ None.
 |InstrumentCode|Instrument Code|`string`|8|||
 |PromptDate|Prompt Date|`date`||`yyyy-mm` or `yyyy-mm-dd`||
 |Instruction|Instruction|`boolean`||||
-|OptionType|Option Type|`string`|1|`C`, `P` or `blank`||
+|OptionType|Option Type|`string`|1|`Call`, `Put` or `Futures`||
 |OptionSeries|Option Series|`decimal`||||
 |BuySell|Buy or Sell|`string`|4|`Buy` or `Sell`||
 |Lots|Lots|`number`||. Greater than `0`||
@@ -328,9 +328,9 @@ None.
 |CommissionCodeRateCode|Commission Code Rate Code|`string`|3|||
 |BrokerPrice|Broker Price|`number`||||
 |BuybackReference|Buyback Reference|`number`||||
-|ClientOrBroker|Client or Broker|`string`|`C` or `B`|||
+|ClientOrBroker|Client or Broker|`string`|`Client` or `Broker`|||
 |CommissionCurrencyCode|Commission Currency Code|`string`|3|||
-|CommissionType|Commission Type|`string`|1|`%` or `blank` for Rate per lot||
+|CommissionType|Commission Type|`string`|1|`Percentage` or `RatePerLot`||
 |CommissionRate|Commission Rate|`number`||||
 |CounterpartyCode|Counterparty Code|`string`|10|||
 |DeclaredPrice|Declared Price|`number`||||
@@ -512,7 +512,7 @@ None.
 + InstrumentCode: NY11 (string)
 + PromptDate: `2015-07-01` (string)
 + Instruction: true (boolean)
-+ OptionType: C (string)
++ OptionType: Call (string)
 + OptionSeries: 123 (number)
 + BuySell: Buy (string)
 + Lots: 100 (number)
@@ -529,9 +529,9 @@ None.
 + CommissionCodeRateCode: 2 (number)
 + BrokerPrice: 20.2 (number)
 + BuybackReference: 1002 (number)
-+ ClientOrBroker: C (string)
++ ClientOrBroker: Client (string)
 + CommissionCurrencyCode: GBP (string)
-+ CommissionType: % (string)
++ CommissionType: Percentage (string)
 + CommissionRate: 12.5 (number)
 + CounterpartyCode: COUNT.P: (string)
 + DeclaredPrice: 53.1 (number)
@@ -554,7 +554,7 @@ None.
 + InstrumentCode: NY11 (string)
 + PromptDate: `2015-07-01` (string)
 + Instruction: true (boolean)
-+ OptionType: C (string)
++ OptionType: Call (string)
 + OptionSeries: 123 (number)
 + BuySell: Buy (string)
 + Lots: 100 (number)
@@ -571,9 +571,9 @@ None.
 + CommissionCodeRateCode: 2 (number)
 + BrokerPrice: 20.2 (number)
 + BuybackReference: 1002 (number)
-+ ClientOrBroker: C (string)
++ ClientOrBroker: Client (string)
 + CommissionCurrencyCode: GBP (string)
-+ CommissionType: % (string)
++ CommissionType: Percentage (string)
 + CommissionRate: 12.5 (number)
 + CounterpartyCode: COUNT.P: (string)
 + DeclaredPrice: 53.1 (number)
