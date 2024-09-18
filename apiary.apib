@@ -416,6 +416,8 @@ None.
 ### Create Instruction Sheet [PUT]
 `PUT` Updates in relation to the creation of Instruction sheet process
 
+<strong>URI Parameters</strong>
+
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |PhysicalTradeId|Physical Trade ID|`string`|10||Required|
@@ -438,13 +440,14 @@ None.
             }
 
 + Parameters
+    + TradingEntityId (required, string, `NL`) ... Identify specific trading entity.
     + PhysicalTradeId (required, string, `P00001.001`) ... Identify specific Physical Order.
     + ReleaseId (required, number, `123`) ... Identify specific Physical Order.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + PhyscialTradeId: 'P00001.001' (string)
+            + PhyscialTradeId: P00001.001 (string)
             + ReleaseId: 123 (number)
         + Response (200 UpdateResponse)
     
@@ -463,6 +466,8 @@ None.
 ### Delete Instruction Sheet [DELETE]
 `DELETE` Updates in relation to the deletion of Instruction sheet process
 
+<strong>URI Parameters</strong>
+
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |PhysicalTradeId|Physical Trade ID|`string`|10||Required|
@@ -485,13 +490,14 @@ None.
             }
 
 + Parameters
+    + TradingEntityId (required, string, `NL`) ... Identify specific trading entity.
     + PhysicalTradeId (required, string, `P00001.001`) ... Identify specific Physical Order.
     + ReleaseId (required, number, `123`) ... Identify specific Physical Order.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + PhyscialTradeId: 'P00001.001' (string)
+            + PhyscialTradeId: P00001.001 (string)
             + ReleaseId: 123 (number)
         + Response (200 DeletedResponse)
     
